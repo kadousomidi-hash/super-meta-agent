@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <title>🧠 سوپر متا ایجنت — مغز متفکر اکوسیستم</title>
+    <style>
+        body {
+            font-family: Vazirmatn, Tahoma, sans-serif;
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 25px;
+            text-align: right;
+            background: #f5f7fa;
+            color: #2c3e50;
+        }
+        .dashboard {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            margin-bottom: 30px;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        h2 {
+            color: #3498db;
+            border-bottom: 2px solid #ecf0f1;
+            padding-bottom: 10px;
+        }
+        .input-area {
+            display: flex;
+            margin: 25px 0;
+        }
+        #need-input {
+            flex: 1;
+            padding: 15px;
+            border-radius: 12px;
+            border: 2px solid #bdc3c7;
+            font-size: 16px;
+            margin-left: 15px;
+        }
+        button {
+            background: #e74c3c;
+            color: white;
+            padding: 15px 25px;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        button:hover {
+            background: #c0392b;
+        }
+        .result-box {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 12px;
+            margin-top: 25px;
+            border: 1px solid #e9ecef;
+            white-space: pre-wrap;
+            line-height: 1.8;
+        }
+        .module-card {
+            background: #e8f4fc;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 15px 0;
+            border-left: 5px solid #3498db;
+        }
+        .decision {
+            background: #fef9e7;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px 0;
+            border-right: 5px solid #f39c12;
+            font-weight: bold;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .modules-repo {
+            background: #eafaf1;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 25px 0;
+            border: 1px dashed #27ae60;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>🧠 سوپر متا ایجنت</h1>
+    <p>مغز متفکر اکوسیستم — نیاز کاربر رو بگو، من تصمیم می‌گیرم و اجرا می‌کنم!</p>
+</div>
+
+<div class="dashboard">
+
+    <h2>📥 مخزن ماژول‌های موجود</h2>
+    <div class="modules-repo">
+        <strong>ماژول‌های موجود در سیستم:</strong><br>
+        - 📈 ماژول تحلیل فروش و پیشنهاد تخفیف<br>
+        - 💬 ماژول پاسخ خودکار به مشتریان<br>
+        - ✍️ ماژول تولید محتوای هوشمند<br>
+        - 📊 ماژول جمع‌آوری و تحلیل بازخورد مشتریان<br>
+        - 🎯 ماژول مشاوره استراتژیک رشد
+    </div>
+
+    <h2>🎯 دریافت نیاز کاربر</h2>
+    <div class="input-area">
+        <input type="text" id="need-input" placeholder="مثلاً: می‌خوام تحلیل فروش داشته باشم یا می‌خوام پست اینستاگرام خودکار بسازم..." autofocus>
+        <button onclick="processNeed()">⚡ تصمیم‌گیری و اجرا</button>
+    </div>
+
+    <div class="result-box" id="result">
+        نتیجه تصمیم‌گیری و اجرا اینجا نمایش داده می‌شود.
+    </div>
+
+</div>
+
+<script>
+    const existingModules = [
+        "تحلیل فروش",
+        "پاسخ خودکار",
+        "تولید محتوا",
+        "بازخورد مشتریان",
+        "مشاوره استراتژیک"
+    ];
+
+    function processNeed() {
+        const input = document.getElementById('need-input');
+        const need = input.value.trim();
+        const resultDiv = document.getElementById('result');
+
+        if (!need) {
+            alert("لطفاً یه نیاز واضح وارد کنید!");
+            return;
+        }
+
+        resultDiv.innerHTML = "🧠 در حال تحلیل نیاز و تصمیم‌گیری... لطفاً صبر کنید.";
+
+        setTimeout(() => {
+            let decision = "";
+            let found = false;
+
+            // بررسی اینکه آیا ماژول مورد نیاز وجود دارد
+            if (need.includes("فروش") || need.includes("تحلیل فروش")) {
+                found = true;
+                decision = `
+<div class="decision">✅ تصمیم: ماژول "تحلیل فروش و پیشنهاد تخفیف" در مخزن وجود دارد.</div>
+<div class="module-card">
+    <strong>نام ماژول:</strong> 📈 تحلیل فروش و پیشنهاد تخفیف<br>
+    <strong>توضیحات:</strong> این ماژول فروش روزانه/هفتگی رو تحلیل می‌کنه و در صورت کاهش، پیشنهادات عملیاتی می‌ده.<br>
+    <strong>ایجنت‌های فعال:</strong> تحلیل‌گر داده، پیشنهاددهنده استراتژیک، سازنده محتوا<br>
+    <strong>وضعیت:</strong> آماده نصب و فعال‌سازی فوری
+</div>
+<button onclick="activateModule('تحلیل فروش')" style="background:#27ae60; margin-top:15px;">🟢 فعال‌سازی ماژول</button>
+                `;
+            }
+            else if (need.includes("پاسخ") || need.includes("واتس‌اپ") || need.includes("تلگرام")) {
+                found = true;
+                decision = `
+<div class="decision">✅ تصمیم: ماژول "پاسخ خودکار به مشتریان" در مخزن وجود دارد.</div>
+<div class="module-card">
+    <strong>نام ماژول:</strong> 💬 پاسخ خودکار به مشتریان<br>
+    <strong>توضیحات:</strong> به پیام‌های مشتریان در شبکه‌های اجتماعی به صورت هوشمند پاسخ می‌ده.<br>
+    <strong>ایجنت‌های فعال:</strong> دریافت پیام، تحلیل متن، تولید پاسخ، ارسال خودکار<br>
+    <strong>وضعیت:</strong> آماده نصب و فعال‌سازی فوری
+</div>
+<button onclick="activateModule('پاسخ خودکار')" style="background:#27ae60; margin-top:15px;">🟢 فعال‌سازی ماژول</button>
+                `;
+            }
+            else if (need.includes("محتوا") || need.includes("پست") || need.includes("اینستاگرام")) {
+                found = true;
+                decision = `
+<div class="decision">✅ تصمیم: ماژول "تولید محتوای هوشمند" در مخزن وجود دارد.</div>
+<div class="module-card">
+    <strong>نام ماژول:</strong> ✍️ تولید محتوای هوشمند<br>
+    <strong>توضیحات:</strong> محتوای جذاب برای شبکه‌های اجتماعی و وبلاگ تولید می‌کنه.<br>
+    <strong>ایجنت‌های فعال:</strong> تحلیل مخاطب، تولید ایده، نویسنده هوشمند، زمان‌بند انتشار<br>
+    <strong>وضعیت:</strong> آماده نصب و فعال‌سازی فوری
+</div>
+<button onclick="activateModule('تولید محتوا')" style="background:#27ae60; margin-top:15px;">🟢 فعال‌سازی ماژول</button>
+                `;
+            }
+            else {
+                // ماژول وجود ندارد — درخواست ساخت از متا ایجنت توسعه وب
+                decision = `
+<div class="decision" style="background:#fef0e7; border-right-color:#e74c3c;">🛠️ تصمیم: ماژول مورد نیاز ("${need}") در مخزن وجود ندارد.</div>
+<div class="module-card" style="background:#fef5e7;">
+    <strong>نام ماژول درخواستی:</strong> ${need}<br>
+    <strong>وضعیت:</strong> نیاز به ساخت جدید<br>
+    <strong>اقدام:</strong> درخواست ساخت به متا ایجنت توسعه وب ارسال شد.
+</div>
+<button onclick="requestBuildModule('${need}')" style="background:#e67e22; margin-top:15px;">🧩 درخواست ساخت ماژول جدید</button>
+                `;
+            }
+
+            resultDiv.innerHTML = decision;
+        }, 2000);
+    }
+
+    function activateModule(moduleName) {
+        const resultDiv = document.getElementById('result');
+        resultDiv.innerHTML += `<p style="color:#27ae60; font-weight:bold; margin-top:20px;">✅ ماژول "${moduleName}" با موفقیت فعال شد! کاربر می‌تونه از امروز ازش استفاده کنه.</p>`;
+    }
+
+    function requestBuildModule(need) {
+        const resultDiv = document.getElementById('result');
+        resultDiv.innerHTML += `<p style="color:#e67e22; font-weight:bold; margin-top:20px;">🧩 درخواست ساخت ماژول جدید "${need}" به متا ایجنت توسعه وب ارسال شد...</p>`;
+
+        setTimeout(() => {
+            resultDiv.innerHTML += `
+<div class="module-card" style="background:#e8f8f5; margin-top:20px;">
+    <strong>✅ ماژول جدید ساخته شد!</strong><br>
+    <strong>نام:</strong> ${need} (نسخه ۱.۰)<br>
+    <strong>وضعیت:</strong> تست و دیباگ انجام شد — آماده نصب<br>
+    <button onclick="activateModule('${need}')" style="background:#27ae60; margin-top:15px;">🟢 فعال‌سازی فوری</button>
+</div>
+            `;
+        }, 3000);
+    }
+</script>
+
+</body>
+</html>
